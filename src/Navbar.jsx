@@ -10,7 +10,7 @@ export default function Navbar() {
           {console.log("nav rendering")}
           <li>
             <NavLink to="/" className="link-item">
-              Home
+              All
             </NavLink>
           </li>
           <li>

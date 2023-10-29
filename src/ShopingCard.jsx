@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import "./App.css";
 
-export default function Mycard(props) {
+export default function ShopingCard(props) {
   return (
     <div key={props.id} className="main-card">
       <div className="card-img-holder">
@@ -10,12 +10,14 @@ export default function Mycard(props) {
       </div>
       <div className="card-content">
         <h4>{props.name}</h4>
-        <p>${props.price}</p>
         <p className="card-des">{props.description}</p>
-        <small>{props.category}</small>
+        <p className="card-price">$ {props.price}</p>
 
-        <div>
-          <Button className="card-btn">Add to cart</Button>
+        {/* <small>{props.category}</small> */}
+
+        <div className="btn-sec">
+          <Button className="card-btn">Buy now</Button>
+          {/* <Button className="card-btn">Add to cart</Button> */}
         </div>
       </div>
     </div>

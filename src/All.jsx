@@ -1,14 +1,13 @@
 import React from "react";
-import Mycard from "./Card";
-import cardAll from "./data";
-import "./App.css";
+import ShopingCard from "./ShopingCard";
+import { cardAll } from "./data";
 
 export default function All() {
   return (
     <div className="card-holder">
       <div className="card">
         {cardAll.map((cardAll) => (
-          <Mycard
+          <ShopingCard
             key={cardAll.id}
             image={cardAll.image}
             name={cardAll.name}
