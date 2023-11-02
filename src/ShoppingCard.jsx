@@ -14,7 +14,9 @@ export default function ShopingCard(props) {
         <p className="card-price">$ {props.price}</p>
 
         <div className="btn-sec">
-          <Button className="card-btn">Buy now</Button>
+          <Button className="card-btn" onClick={props.handelBuy}>
+            Buy now
+          </Button>
         </div>
       </div>
     </div>

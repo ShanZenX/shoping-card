@@ -1,12 +1,16 @@
 import React from "react";
 import ShopingCard from "./ShoppingCard";
 
-function All({ allData }) {
+function All({ allData, onBuy }) {
+  const handelBuy = (data) => {
+    onBuy(data);
+  };
   return (
     <div className="card-holder">
       <div className="card">
         {allData.map((allData) => (
           <ShopingCard
+            handelBuy={() => handelBuy(allData)}
             key={allData.id}
             image={allData.image}
             name={allData.name}

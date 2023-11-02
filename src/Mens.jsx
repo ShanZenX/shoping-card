@@ -1,12 +1,16 @@
 import React from "react";
 import ShopingCard from "./ShoppingCard";
 
-export default function Mens({ menData }) {
+export default function Mens({ menData, onBuy }) {
+  const handelBuy = (data) => {
+    onBuy(data);
+  };
   return (
     <div className="card-holder">
       <div className="card">
         {menData.map((menData) => (
           <ShopingCard
+            handelBuy={() => handelBuy(menData)}
             key={menData.id}
             image={menData.image}
             name={menData.name}

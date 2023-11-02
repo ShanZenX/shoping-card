@@ -31,16 +31,28 @@ function App() {
     fetchData("http://localhost:3004/kidsDresses", setKidsData);
   }, []);
 
+  const getData = (data) => {
+    console.table(data);
+  };
+
   return (
     <div>
       <BrowserRouter>
         <Navbar />
-
         <Routes>
-          <Route path="/" element={<All allData={allData} />} />
-          <Route path="mens" element={<Mens menData={menData} />} />
-          <Route path="women" element={<Women womenData={womenData} />} />
-          <Route path="kids" element={<Kids kidsData={kidsData} />} />{" "}
+          <Route path="/" element={<All allData={allData} onBuy={getData} />} />
+          <Route
+            path="mens"
+            element={<Mens menData={menData} onBuy={getData} />}
+          />
+          <Route
+            path="women"
+            element={<Women womenData={womenData} onBuy={getData} />}
+          />
+          <Route
+            path="kids"
+            element={<Kids kidsData={kidsData} onBuy={getData} />}
+          />{" "}
         </Routes>
       </BrowserRouter>
     </div>
