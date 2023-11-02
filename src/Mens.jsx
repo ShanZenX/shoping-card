@@ -1,19 +1,18 @@
 import React from "react";
-import ShopingCard from "./ShopingCard";
-import { cardMens } from "./data";
+import ShopingCard from "./ShoppingCard";
 
-export default function Mens() {
+export default function Mens({ menData }) {
   return (
     <div className="card-holder">
       <div className="card">
-        {cardMens.map((cardMens) => (
+        {menData.map((menData) => (
           <ShopingCard
-            key={cardMens.id}
-            image={cardMens.image}
-            name={cardMens.name}
-            price={cardMens.price}
-            description={cardMens.description}
-            category={cardMens.category}
+            key={menData.id}
+            image={menData.image}
+            name={menData.name}
+            price={menData.price}
+            description={menData.description}
+            category={menData.category}
           />
         ))}
       </div>

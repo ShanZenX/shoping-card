@@ -1,18 +1,17 @@
 import React from "react";
-import { cardKids } from "./data";
-import ShopingCard from "./ShopingCard";
+import ShopingCard from "./ShoppingCard";
 
-export default function Kids() {
+export default function Kids({ kidsData }) {
   return (
     <div className="card-holder">
       <div className="card">
-        {cardKids.map((cardKids) => (
+        {kidsData.map((kidsData) => (
           <ShopingCard
-            id={cardKids.id}
-            image={cardKids.image}
-            name={cardKids.name}
-            description={cardKids.description}
-            price={cardKids.price}
+            id={kidsData.id}
+            image={kidsData.image}
+            name={kidsData.name}
+            description={kidsData.description}
+            price={kidsData.price}
           />
         ))}
       </div>

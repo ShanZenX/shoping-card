@@ -7,7 +7,6 @@ export default function Navbar() {
     <div className="navbar-head">
       <nav className="navbar">
         <ul>
-          {console.log("nav rendering")}
           <li>
             <NavLink to="/" className="link-item">
               All

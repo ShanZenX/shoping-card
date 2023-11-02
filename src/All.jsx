@@ -1,22 +1,23 @@
 import React from "react";
-import ShopingCard from "./ShopingCard";
-import { cardAll } from "./data";
+import ShopingCard from "./ShoppingCard";
 
-export default function All() {
+function All({ allData }) {
   return (
     <div className="card-holder">
       <div className="card">
-        {cardAll.map((cardAll) => (
+        {allData.map((allData) => (
           <ShopingCard
-            key={cardAll.id}
-            image={cardAll.image}
-            name={cardAll.name}
-            price={cardAll.price}
-            description={cardAll.description}
-            category={cardAll.category}
+            key={allData.id}
+            image={allData.image}
+            name={allData.name}
+            price={allData.price}
+            description={allData.description}
+            category={allData.category}
           />
         ))}
       </div>
     </div>
   );
 }
+
+export default All;

@@ -13,11 +13,8 @@ export default function ShopingCard(props) {
         <p className="card-des">{props.description}</p>
         <p className="card-price">$ {props.price}</p>
 
-        {/* <small>{props.category}</small> */}
-
         <div className="btn-sec">
           <Button className="card-btn">Buy now</Button>
-          {/* <Button className="card-btn">Add to cart</Button> */}
         </div>
       </div>
     </div>

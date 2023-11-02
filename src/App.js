@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, json } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Remove the unused 'json' import
 import Mens from "./Mens";
 import All from "./All";
 import Women from "./Women";
@@ -8,31 +8,39 @@ import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 
 function App() {
-  // const API = "http://localhost:3004";
+  const [allData, setAllData] = useState([]);
+  const [menData, setMenData] = useState([]);
+  const [womenData, setWomenData] = useState([]);
+  const [kidsData, setKidsData] = useState([]);
 
-  // const [data, setData] = useState([]);
+  const fetchData = (apiUrl, setData) => {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((Data) => {
+        setData(Data);
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+      });
+  };
 
-  // const getData = () => {
-  //   fetch(API)
-  //     .then((dressData) => dressData.json())
-  //     .catch((err) => console.log("error"));
-  //   setData(json);
-  //   console.log({ dressData });
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    fetchData("http://localhost:3004/dresses", setAllData);
+    fetchData("http://localhost:3004/menDresses", setMenData);
+    fetchData("http://localhost:3004/womenDresses", setWomenData);
+    fetchData("http://localhost:3004/kidsDresses", setKidsData);
+  }, []);
 
   return (
     <div>
       <BrowserRouter>
         <Navbar />
+
         <Routes>
-          <Route path="/" element={<All />}></Route>
-          <Route path="mens" element={<Mens />}></Route>
-          <Route path="women" element={<Women />}></Route>
-          <Route path="Kids" element={<Kids />}></Route>
+          <Route path="/" element={<All allData={allData} />} />
+          <Route path="mens" element={<Mens menData={menData} />} />
+          <Route path="women" element={<Women womenData={womenData} />} />
+          <Route path="kids" element={<Kids kidsData={kidsData} />} />{" "}
         </Routes>
       </BrowserRouter>
     </div>

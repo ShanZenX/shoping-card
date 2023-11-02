@@ -105,7 +105,16 @@ code {
   object-fit: cover;
   width: 300px;
   height: 570px;
+  margin-bottom: 10px;
+
 }
+
+
+/* @media only screen and (max-width:600px) {
+  .main-card {
+  }
+
+} */
 
 .card-content {
   background-color: #3c684f0b;
