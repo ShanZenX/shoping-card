@@ -12,6 +12,7 @@ function App() {
   const [menData, setMenData] = useState([]);
   const [womenData, setWomenData] = useState([]);
   const [kidsData, setKidsData] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const fetchData = (apiUrl, setData) => {
     fetch(apiUrl)
@@ -32,13 +33,14 @@ function App() {
   }, []);
 
   const getData = (data) => {
-    console.table(data);
+    const cartData = [...cart, data];
+    setCart(cartData);
+    console.log(cart);
   };
-
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Navbar cart={cart} />
         <Routes>
           <Route path="/" element={<All allData={allData} onBuy={getData} />} />
           <Route

@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { NavLink } from "react-router-dom";
-
-export default function Navbar() {
+import { MdShoppingCart } from "react-icons/md";
+export default function Navbar({ cart }) {
   return (
     <div className="navbar-head">
       <nav className="navbar">
@@ -25,6 +25,12 @@ export default function Navbar() {
           <li>
             <NavLink to="/Kids" className="link-item">
               Kids
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="./kids" className="link-item">
+              <MdShoppingCart />
+              {cart.length}
             </NavLink>
           </li>
         </ul>
