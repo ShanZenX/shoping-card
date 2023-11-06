@@ -6,6 +6,7 @@ import Women from "./Women";
 import Kids from "./Kids";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
+import ShopingCard from "./ShoppingCard";
 
 function App() {
   const [allData, setAllData] = useState([]);

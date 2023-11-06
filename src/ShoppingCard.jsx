@@ -12,7 +12,6 @@ export default function ShopingCard(props) {
         <h4>{props.name}</h4>
         <p className="card-des">{props.description}</p>
         <p className="card-price">$ {props.price}</p>
-
         <div className="btn-sec">
           <Button className="card-btn" onClick={props.handelBuy}>
             Buy now
