@@ -1,6 +1,6 @@
 ## E-commerce website product section 
 
-- Made with api data so live preview not going to show our cart design.
+- "Made with API data, so the live preview won't show our cart design."
 
 ## Screenshot of UI
 
