@@ -4,6 +4,6 @@
 
 ## Screenshot of UI
 
-<img src="./public/product-sec-ui.png>
+<img src="./public/product-sec-ui.png">
 
 ## HAPPY CODING!!!
